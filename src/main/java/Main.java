@@ -27,7 +27,7 @@ public class Main {
                             if (scanner.hasNextInt()) {
                                 int speed = scanner.nextInt();
 
-                                if (speed > 0 && speed <= 250) {
+                                if (speed >= 0 && speed <= 250) {
                                     cars.add(new Car(name, speed));
                                     break;
                                 } else {
