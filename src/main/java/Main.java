@@ -7,6 +7,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>();
+
         System.out.println("///////////////////////////////////");
         System.out.println("Приветсвуем на гонке 24 часа Леман!");
         System.out.println("///////////////////////////////////");
@@ -14,7 +15,6 @@ public class Main {
         for (int i = 1;i<=3;i++) {
 
             while (true) {
-
                 System.out.println("Введите название автомобиля №" + i );
 
                     String name = scanner.next().trim();
@@ -23,6 +23,7 @@ public class Main {
                         while (true) {
                             System.out.println("Введите скорость автомобиля №" + i + " "+name );
                             scanner.nextLine();
+
                             if (scanner.hasNextInt()) {
                                 int speed = scanner.nextInt();
 
@@ -34,30 +35,20 @@ public class Main {
                                 }
                             } else {
                                 System.out.println("Нужно ввести скорость целым числом");
-
                             }
                         }
                         break;
                     }else{
                         System.out.println("Название должно состоять из двух и более символов");
                     }
-
-
             }
-
         }
-
         Race race = new Race();
         ArrayList<String> result = race.goRacing(cars);
-
 
         System.out.println("///////ФИНИШ!///////");
         for(String i : result){
             System.out.println(i);
         }
-
-
-
     }
 }
-

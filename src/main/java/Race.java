@@ -8,7 +8,7 @@ public class Race {
         ArrayList<String> raceResult = new ArrayList<>();
         int bestSpeed = 0;
         String bestCar ="";
-        String winner = "Неизвестно";
+        String winner = "";
 
         for(Car car:cars){
             raceResult.add(car.name + " проехала " + car.speed*24 + "км");
@@ -18,21 +18,13 @@ public class Race {
             if(car.speed>bestSpeed) {
                 bestSpeed = car.speed;
                 bestCar = car.name;
-                winner = "Победитель " + car.name +
-                        " с результатом " + bestSpeed * 24 +
-                        "км за 24 часа!";
+                winner = "Победитель " + car.name + " с результатом "+bestSpeed * 24 + "км за 24 часа!";
             } else if (car.speed == bestSpeed) {
-                bestCar = bestCar+" и "+car.name;
-                winner = "Ничья между " + bestCar +
-                        " с результатом " + bestSpeed * 24 +
-                        "км за 24 часа!";
+                bestCar = bestCar + " и " + car.name;
+                winner = "Ничья между " + bestCar + " с результатом " + bestSpeed * 24 + "км за 24 часа!";
             }
-
         }
-
         raceResult.add(winner);
-
         return raceResult;
     }
-
 }
